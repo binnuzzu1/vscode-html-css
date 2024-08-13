@@ -1,27 +1,52 @@
-name: Tests
+<!-- Features Section -->
+<section id="features">
+    <div class="container">
+        <h2>Features</h2>
+        <div class="feature">
+            <h3>Trills</h3>
+            <p>Share short, engaging video clips with unique filters and extended durations.</p>
+        </div>
+        <div class="feature">
+            <h3>Chats</h3>
+            <p>Stay connected with friends through group chats, encrypted messaging, and more.</p>
+        </div>
+        <div class="feature">
+            <h3>Followers</h3>
+            <p>Organize your followers into custom categories and manage your network.</p>
+        </div>
+    </div>
+</section>
 
-on:
-  push:
-    branches:
-      - master
+<!-- About Us Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Bishorts</h2>
+        <p>Bishorts is the next big thing in social media, designed for young adults who are tech-savvy and love to share creative content.</p>
+    </div>
+</section>
 
-jobs:
-  build:
-    strategy:
-      fail-fast: true
-      matrix:
-        node-version: [18]
-        os: [ubuntu-22.04, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: xvfb-run -a npm test
-        if: runner.os == 'Linux'
-      - run: npm test
-        if: runner.os != 'Linux'
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Bishorts. All rights reserved.</p>
+    </div>
+</footer>
